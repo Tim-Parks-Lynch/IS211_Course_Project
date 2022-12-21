@@ -1,0 +1,22 @@
+{% extends 'home.html' %} {% block title %}
+<title>Petazon {{title}}</title>
+{% endblock title %} {% block content %}
+<div class="checkout_container">
+  <div class="checkout_container_content">
+    <p class="checkout_header_text">Thank you for your order of</p>
+    {% for product in cart %}
+      <div class="checkout_text_container">
+        <div class="checkout_product_name">{{product.name}}</div>
+        <div class="checkout_product_quantity">Quantity: {{product.quantity}}</div>
+        <div class="checkout_single_product_price">Price ${{product.price / 100}}</div>
+      </div>
+      {% endfor %}
+    </div>
+  <div class="flex_container_row">
+    <div></div>
+    <div class="total_container">
+      <div class="cart_single_product_price">Total: $20,000.00</div>
+    </div>
+  </div>
+</div>
+{% endblock content%}

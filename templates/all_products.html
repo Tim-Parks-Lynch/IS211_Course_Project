@@ -1,0 +1,15 @@
+{% extends 'home.html' %} {% block title %}
+<title>Petazon Home</title>
+{% endblock %} {% block content %}
+<div class="products_parent">
+    {% for product in Products %}
+    <a class="products_card" href="/products/{{product.id}}">
+      <div>{{product.name}}</div>
+      <img class="products_visual" src="{{product.image_url}}" />
+      <div>
+        <button class="products_button">Additional Info</button>
+      </div>
+    </a>
+  {% endfor %}
+</div>
+{% endblock %}

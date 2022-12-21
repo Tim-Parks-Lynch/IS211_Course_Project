@@ -1,0 +1,25 @@
+{% extends 'home.html' %} {% block title %}
+<title>Petazon {{title}}</title>
+{% endblock title %} {% block content %}
+<div class="single_product_container">
+  <div class="img_container">
+    <div class="single_product_name">{{product.name}}</div>
+    <img class="single_product_img" src="{{product.image_url}}" />
+    <div class="single_product_img_dup_container">
+      <img class="single_product_img_dup" src="{{product.image_url}}" />
+      <img class="single_product_img_dup" src="{{product.image_url}}" />
+      <img class="single_product_img_dup" src="{{product.image_url}}" />
+    </div>
+  </div>
+  <div class="text_container">
+    <p class="single_product_description">Description</p>
+    <p class="single_product_description_text">{{product.description}}</p>
+    <p class="single_product_price">${{product.price / 100}}</p>
+    <a href="/add_to_cart/{{product.id}}">
+      <button class="add_to_cart_button" type="submit" formaction="/add_to_cart" form>
+        Add to Cart
+      </button>
+    </a>
+  </div>
+</div>
+{% endblock content%}

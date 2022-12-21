@@ -1,0 +1,107 @@
+{% extends 'base.html' %} {% block title %}
+<title>Petazon Home</title>
+{% endblock %} {% block nav %} {% if isAdmin == True and isLoggedIn == True %}
+<div class="header item1">
+  <div class="left_icon">
+    <a href="/">
+    <img src="{{url_for('static', filename="home.png")}}"/>
+    </a>
+  </div>
+  <div class="middle_icon">
+    <div class="middle_icon_search_container">
+      <input
+        class="middle_icon_search_container_input"
+        placeholder="Search our amazing array of products"
+      />
+      <img class="middle_icon_search_container_img" src="{{url_for('static',
+      filename="search-icon.png")}}"/>
+    </div>
+  </div>
+  <div class="right_icon">
+    <a href="/admin">
+      <img src="{{url_for('static', filename="admin.png")}}"/>
+    </a>
+    <a href="/logout"> 
+      <img src="{{url_for('static', filename="logout.png")}}"/>
+    </a> 
+    <a href="/cart">
+      <img id="right_icon_cart" src="{{url_for('static', filename="cart.png")}}"/>
+    </a>
+  </div>
+</div>
+{% elif isAdmin == False and isLoggedIn == True %}
+<div class="header item1">
+  <div class="left_icon">
+    <a href="/">
+    <img src="{{url_for('static', filename="home.png")}}"/>
+    </a>
+  </div>
+  <div class="middle_icon">
+    <div class="middle_icon_search_container">
+      <input
+        class="middle_icon_search_container_input"
+        placeholder="Search our amazing array of products"
+      />
+      <img class="middle_icon_search_container_img" src="{{url_for('static',
+      filename="search-icon.png")}}"/>
+    </div>
+  </div>
+  <div class="right_icon">
+    <a href="/logout">
+      <img src="{{url_for('static', filename="logout.png")}}"/>
+    </a> 
+    <a href="/cart">
+      <img id="right_icon_cart" src="{{url_for('static', filename="cart.png")}}"/>
+    </a>
+  </div>
+</div>
+{% else %}
+<div class="header item1">
+  <div class="left_icon">
+    <a href="/">
+    <img src="{{url_for('static', filename="home.png")}}"/>
+    </a>
+  </div>
+  <div class="middle_icon">
+    <div class="middle_icon_search_container">
+      <input
+        class="middle_icon_search_container_input"
+        placeholder="Search our amazing array of products"
+      />
+      <img class="middle_icon_search_container_img" src="{{url_for('static',
+      filename="search-icon.png")}}"/>
+    </div>
+  </div>
+  <div class="right_icon">
+    <a href="/login"> 
+      <img src="{{url_for('static', filename="login.png")}}"/>
+    </a> 
+    <a href="/signup">
+      <img src="{{url_for('static', filename="signup.png")}}"/> 
+    </a>
+    <a href="/cart">
+      <img id="right_icon_cart" src="{{url_for('static', filename="cart.png")}}"/>
+    </a>
+  </div>
+</div>
+{% endif %} {% endblock nav %}
+{% block content %}{% endblock content%} 
+{% block footer %}
+<footer class="footer_container item6">
+  <div class="left_column_footer_container">
+    <a class="fake_link" href="#">Cat Squad Support</a>
+    <a class="fake_link" href="#">Adopt a Hooman</a>
+    <a class="fake_link" href="#">Hooman Support</a>
+  </div>
+  <div class="middle_column_footer_container">
+    <a class="fake_link" href="#">Become a Partner</a>
+    <a class="fake_link" href="#">Sell Products on Petazon</a>
+    <a class="fake_link" href="#">Supply to Petazon</a>
+  </div>
+  <div class="right_column_footer_container">
+    <a class="fake_link right1" href="#">About Us</a>
+    <a class="fake_link right2" href="#">Careers</a>
+    <a class="fake_link right3" href="#">Media</a>
+  </div>
+</footer>
+{% endblock footer %}

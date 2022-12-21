@@ -1,0 +1,31 @@
+{% extends 'home.html' %} {% block title %}
+<title>Petazon {{title}}</title>
+{% endblock title %} {% block content %} {% if cart %}
+<div class="content_holder_div">
+  {% for product in cart %}
+  <div class="cart_image_container">
+    <div class="cart_card_container">
+      <img class="products_visual" src="{{product.image_url}}" >
+      <div class="cart_product_quantity">Quantity: {{product.quantity}}</div>
+      <div class="button_container_flex">
+        <button class="submit_button" type="submit">+</button>
+        <button class="submit_button" type="submit">-</button>
+      </div>
+    </div>
+  </img>
+  <div class="text_container">
+      <div class="cart_product_name">{{product.name}}</div>
+      <p class="cart_product_description_text">{{product.description}}</p>
+      <div class="cart_single_product_price">Price ${{product.price / 100}}</div>
+    </div>
+  </div>
+  {% endfor %} {% else %} {% endif %}
+  <div class="flex_container_row">
+    <div></div>
+    <div class="total_container">
+      <div class="cart_single_product_price">Total: $20,000.00</div>
+      <button class="checkout_button" type="submit">Checkout</button>
+    </div>
+  </div>
+</div>
+{% endblock content%}

@@ -1,0 +1,28 @@
+{% extends 'home.html' %} {% block title %}
+<title>Petazon {{title}}</title>
+{% endblock title %} {% block content %}
+<div class="admin_product_container">
+  <div class="admin_form_container">
+    <div class="input_form_container">
+      <form action="/signup">
+        <p class="center_bold_text">New User Signup Form</p>
+        <label for="product_name">Username:</label>
+        <input type="text" name="product_name" required />
+        <br />
+        <label for="product_description">Email:</label>
+        <input type="email" name="product_description" required />
+        <br />
+        <label for="product_stock">Password:</label>
+        <input type="password" name="product_stock" required />
+        <br />
+        <label for="product_price">First Name:</label>
+        <input type="text" name="product_price" required />
+        <br />
+        <label for="product_image_url">Last Name:</label>
+        <input type="text" name="product_image_url" required />
+        <button class="admin_submit_button" type="submit">SUBMIT</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content%}

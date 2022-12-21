@@ -1,0 +1,17 @@
+{% extends 'home.html' %} {% block title %}
+<title>Petazon {{title}}</title>
+{% endblock title %} {% block content %}
+<div class="admin_product_container">
+  <div class="admin_form_container">
+    <div class="input_form_container">
+      <form action="/login">
+        <label class="center_bold_text" for="username">Username</label>
+        <input class="user_input_username" type="text" name="username" required />
+        <label class="center_bold_text" for="password">Password</label>
+        <input class="user_input_password" type="password" name="password" required />
+        <button class="login_submit_button" type="submit">SUBMIT</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content%}
